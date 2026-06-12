@@ -3,14 +3,16 @@
 
 enum TokenType
 {
-    TOK_INT,
-    TOK_IF,
-    TOK_ELSE,
-    TOK_WHILE,
-    TOK_RETURN,
+    TOK_EOF,
 
     TOK_IDENTIFIER,
     TOK_NUMBER,
+
+    TOK_INT,
+    TOK_RETURN,
+    TOK_IF,
+    TOK_ELSE,
+    TOK_WHILE,
 
     TOK_PLUS,
     TOK_MINUS,
@@ -18,20 +20,20 @@ enum TokenType
     TOK_SLASH,
 
     TOK_ASSIGN,
-    TOK_SEMICOLON,
 
     TOK_LPAREN,
     TOK_RPAREN,
+
     TOK_LBRACE,
     TOK_RBRACE,
 
-    TOK_EOF
+    TOK_SEMICOLON
 };
 
 struct Token
 {
     TokenType type;
-    char lexeme[64];
+    const char* lexeme;
 };
 
 #endif
