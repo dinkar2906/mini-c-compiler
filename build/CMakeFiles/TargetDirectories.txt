@@ -1,0 +1,3 @@
+/home/dinkar/Desktop/mini-c-compiler/build/CMakeFiles/minic.dir
+/home/dinkar/Desktop/mini-c-compiler/build/CMakeFiles/edit_cache.dir
+/home/dinkar/Desktop/mini-c-compiler/build/CMakeFiles/rebuild_cache.dir
