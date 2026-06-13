@@ -1,13 +1,13 @@
-// src/main.cpp
-
-#include "../include/token.h"
+#include <iostream>
+#include "lexer.h"
 
 int main()
 {
-    Token token;
+    Lexer lexer("123");
 
-    token.type = TOK_INT;
-    token.lexeme = "int";
+    Token token = lexer.nextToken();
+
+    std::cout << token.lexeme << '\n';
 
     return 0;
 }

@@ -9,6 +9,7 @@ enum NodeType
     NODE_ASSIGN
 };
 
+
 struct ASTNode
 {
     NodeType type;
