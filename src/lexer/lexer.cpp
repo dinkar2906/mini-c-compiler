@@ -1,46 +1,21 @@
-#include "lexer.h"
-#include <cctype>
+#ifndef LEXER_H
+#define LEXER_H
 
-Lexer::Lexer(const char* src)
+#include "token.h"
+
+class Lexer
 {
-    source = src;
-    pos = 0;
-}
+private:
+    const char* source;
+    int pos;
 
-char Lexer::currentChar()
-{
-    return source[pos];
-}
+    char currentChar();
+    void advance();
 
-void Lexer::advance()
-{
-    pos++;
-}
+public:
+    Lexer(const char* src);
 
-Token Lexer::nextToken()
-{
-    Token token;
+    Token nextToken();
+};
 
-    while (currentChar() != '\0')
-    {
-        if (isdigit(currentChar()))
-        {
-            while (isdigit(currentChar()))
-            {
-                advance();
-            }
-
-            token.type = TOK_NUMBER;
-            token.lexeme = "NUMBER";
-
-            return token;
-        }
-
-        advance();
-    }
-
-    token.type = TOK_EOF;
-    token.lexeme = "EOF";
-
-    return token;
-}
+#endif
