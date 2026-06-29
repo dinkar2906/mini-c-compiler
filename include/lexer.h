@@ -12,8 +12,11 @@ private:
     char currentChar();
     void advance();
 
+    TokenType checkKeyword(const char* word);
+
 public:
     Lexer(const char* src);
+
     Token nextToken();
 };
 

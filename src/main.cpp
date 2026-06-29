@@ -3,11 +3,20 @@
 
 int main()
 {
-    Lexer lexer("123");
+    Lexer lexer("123 abc 456 xyz");
 
-    Token token = lexer.nextToken();
+    Token token;
 
-    std::cout << token.lexeme << '\n';
+    do
+    {
+        token = lexer.nextToken();
+
+        std::cout << token.type
+                  << " -> "
+                  << token.lexeme
+                  << '\n';
+
+    } while (token.type != TOK_EOF);
 
     return 0;
 }
