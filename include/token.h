@@ -7,6 +7,8 @@ enum TokenType
 
     TOK_IDENTIFIER,
     TOK_NUMBER,
+    TOK_STRING,
+    TOK_CHAR,
 
     TOK_INT,
     TOK_RETURN,

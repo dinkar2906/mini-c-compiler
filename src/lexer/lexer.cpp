@@ -2,11 +2,13 @@
 
 #include <cctype>
 #include <cstring>
+#include <cstdio>
 
 Lexer::Lexer(const char* src)
 {
     source = src;
     pos = 0;
+    line = 1;
 }
 
 char Lexer::currentChar()
@@ -14,8 +16,25 @@ char Lexer::currentChar()
     return source[pos];
 }
 
+
+char Lexer::peekChar()
+{
+    if (currentChar() == '\0')
+    {
+        return '\0';
+    }
+
+    return source[pos + 1];
+}
+
 void Lexer::advance()
 {
+    
+    if (currentChar() == '\n')
+    {
+        line++;
+    }
+
     pos++;
 }
 
@@ -55,10 +74,45 @@ Token Lexer::nextToken()
 
     while (currentChar() != '\0')
     {
-        // Skip whitespace
+        
         if (isspace(currentChar()))
         {
             advance();
+            continue;
+        }
+
+        
+        if (currentChar() == '/' && peekChar() == '/')
+        {
+            while (currentChar() != '\n' && currentChar() != '\0')
+            {
+                advance();
+            }
+            continue;
+        }
+
+        
+        if (currentChar() == '/' && peekChar() == '*')
+        {
+            advance(); // skip '/'
+            advance(); // skip '*'
+
+            while (!(currentChar() == '*' && peekChar() == '/'))
+            {
+                if (currentChar() == '\0')
+                {
+                    printf("Lexer Error (line %d): comment was never closed with */\n", line);
+                    break;
+                }
+                advance();
+            }
+
+            if (currentChar() != '\0')
+            {
+                advance(); // skip '*'
+                advance(); // skip '/'
+            }
+
             continue;
         }
 
@@ -102,7 +156,162 @@ Token Lexer::nextToken()
             return token;
         }
 
-        // Ignore unknown character
+        // String literal: "like this"
+        if (currentChar() == '"')
+        {
+            advance(); // skip opening quote
+
+            int i = 0;
+
+            while (currentChar() != '"' && currentChar() != '\0')
+            {
+                buffer[i++] = currentChar();
+                advance();
+            }
+
+            if (currentChar() == '\0')
+            {
+                printf("Lexer Error (line %d): string was never closed with \"\n", line);
+            }
+            else
+            {
+                advance(); // skip closing quote
+            }
+
+            buffer[i] = '\0';
+
+            Token token;
+            token.type = TOK_STRING;
+            token.lexeme = buffer;
+
+            return token;
+        }
+
+        // Character literal: 'like this'
+        if (currentChar() == '\'')
+        {
+            advance(); // skip opening quote
+
+            int i = 0;
+
+            while (currentChar() != '\'' && currentChar() != '\0')
+            {
+                buffer[i++] = currentChar();
+                advance();
+            }
+
+            if (currentChar() == '\0')
+            {
+                printf("Lexer Error (line %d): character literal was never closed with '\n", line);
+            }
+            else
+            {
+                advance(); // skip closing quote
+            }
+
+            buffer[i] = '\0';
+
+            Token token;
+            token.type = TOK_CHAR;
+            token.lexeme = buffer;
+
+            return token;
+        }
+
+        // Operators: + - * / =
+        if (currentChar() == '+')
+        {
+            advance();
+            Token token;
+            token.type = TOK_PLUS;
+            token.lexeme = "+";
+            return token;
+        }
+
+        if (currentChar() == '-')
+        {
+            advance();
+            Token token;
+            token.type = TOK_MINUS;
+            token.lexeme = "-";
+            return token;
+        }
+
+        if (currentChar() == '*')
+        {
+            advance();
+            Token token;
+            token.type = TOK_STAR;
+            token.lexeme = "*";
+            return token;
+        }
+
+        if (currentChar() == '/')
+        {
+            advance();
+            Token token;
+            token.type = TOK_SLASH;
+            token.lexeme = "/";
+            return token;
+        }
+
+        if (currentChar() == '=')
+        {
+            advance();
+            Token token;
+            token.type = TOK_ASSIGN;
+            token.lexeme = "=";
+            return token;
+        }
+
+        // Delimiters: ( ) { } ;
+        if (currentChar() == '(')
+        {
+            advance();
+            Token token;
+            token.type = TOK_LPAREN;
+            token.lexeme = "(";
+            return token;
+        }
+
+        if (currentChar() == ')')
+        {
+            advance();
+            Token token;
+            token.type = TOK_RPAREN;
+            token.lexeme = ")";
+            return token;
+        }
+
+        if (currentChar() == '{')
+        {
+            advance();
+            Token token;
+            token.type = TOK_LBRACE;
+            token.lexeme = "{";
+            return token;
+        }
+
+        if (currentChar() == '}')
+        {
+            advance();
+            Token token;
+            token.type = TOK_RBRACE;
+            token.lexeme = "}";
+            return token;
+        }
+
+        if (currentChar() == ';')
+        {
+            advance();
+            Token token;
+            token.type = TOK_SEMICOLON;
+            token.lexeme = ";";
+            return token;
+        }
+
+        // Unknown character: report it and skip past it
+        printf("Lexer Error (line %d): unexpected character '%c'\n", line, currentChar());
         advance();
     }
 

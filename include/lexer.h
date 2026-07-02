@@ -8,8 +8,10 @@ class Lexer
 private:
     const char* source;
     int pos;
+    int line;
 
     char currentChar();
+    char peekChar();
     void advance();
 
     TokenType checkKeyword(const char* word);
