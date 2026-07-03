@@ -30,7 +30,20 @@ CMakeFiles/minic.dir/src/lexer/lexer.cpp.o: /home/dinkar/Desktop/mini-c-compiler
   /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
-  /usr/include/strings.h
+  /usr/include/strings.h \
+  /usr/include/c++/12/cstdio \
+  /usr/include/stdio.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
 
 CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -251,10 +264,6 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/errno.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
@@ -281,10 +290,6 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/bits/string_view.tcc:
 
-/usr/include/stdio.h:
-
-/usr/include/c++/12/bits/functional_hash.h:
-
 /usr/include/c++/12/bits/stl_construct.h:
 
 /usr/include/c++/12/bits/alloc_traits.h:
@@ -297,25 +302,25 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/bits/refwrap.h:
 
-/usr/include/c++/12/bits/hash_bytes.h:
+/usr/include/c++/12/debug/debug.h:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
+/usr/include/c++/12/bits/stl_pair.h:
 
-/usr/include/c++/12/typeinfo:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/c++/12/bits/cxxabi_init_exception.h:
+/usr/include/c++/12/bits/stl_algobase.h:
 
 /usr/include/c++/12/backward/binders.h:
 
-/usr/include/c++/12/bits/exception_defines.h:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/include/c++/12/bits/locale_classes.h:
+/usr/include/c++/12/bits/stringfwd.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/12/ios:
+
+/usr/include/c++/12/ostream:
+
+/home/dinkar/Desktop/mini-c-compiler/src/main.cpp:
 
 /usr/include/c++/12/bits/exception_ptr.h:
 
@@ -329,25 +334,23 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/c++/12/cstdint:
-
 /usr/include/x86_64-linux-gnu/c++/12/bits/ctype_inline.h:
 
 /usr/include/wchar.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
 /usr/include/c++/12/cwchar:
 
-/usr/include/c++/12/bits/stringfwd.h:
+/usr/include/c++/12/cstdint:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/include/c++/12/bits/functional_hash.h:
 
-/usr/include/c++/12/ios:
+/usr/include/stdio.h:
 
-/usr/include/c++/12/ostream:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/home/dinkar/Desktop/mini-c-compiler/src/main.cpp:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
@@ -355,19 +358,27 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/bits/memoryfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+/usr/include/c++/12/typeinfo:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/12/bits/hash_bytes.h:
 
 /usr/include/c++/12/iosfwd:
+
+/home/dinkar/Desktop/mini-c-compiler/src/lexer/lexer.cpp:
 
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h:
-
-/usr/include/c++/12/new:
 
 /usr/include/c++/12/exception:
 
@@ -383,11 +394,15 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/gthr.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
 /usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h:
 
-/usr/include/c++/12/bits/stl_pair.h:
+/usr/include/c++/12/bits/utility.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/features.h:
 
@@ -401,15 +416,13 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/cctype:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/ctype.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/c++locale.h:
 
-/usr/include/ctype.h:
-
-/usr/include/c++/12/bits/stl_algobase.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -441,14 +454,6 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/cstring:
 
-/usr/include/c++/12/clocale:
-
-/usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/home/dinkar/Desktop/mini-c-compiler/src/lexer/lexer.cpp:
-
 /usr/include/c++/12/bits/locale_classes.tcc:
 
 /usr/include/c++/12/bits/exception.h:
@@ -457,13 +462,31 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/bits/ptr_traits.h:
 
+/usr/include/c++/12/ext/numeric_traits.h:
+
+/usr/include/c++/12/pstl/pstl_config.h:
+
 /usr/include/pthread.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+/usr/include/c++/12/bits/exception_defines.h:
+
+/usr/include/c++/12/bits/locale_classes.h:
+
+/usr/include/c++/12/bits/cxxabi_init_exception.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/c++/12/clocale:
+
+/usr/include/c++/12/new:
 
 /usr/include/c++/12/bits/nested_exception.h:
 
@@ -498,10 +521,6 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/c++/12/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/12/bits/utility.h:
 
 /usr/include/c++/12/bits/locale_facets.tcc:
 
@@ -589,10 +608,4 @@ CMakeFiles/minic.dir/src/main.cpp.o: /home/dinkar/Desktop/mini-c-compiler/src/ma
 
 /usr/include/c++/12/bits/concept_check.h:
 
-/usr/include/c++/12/debug/debug.h:
-
 /usr/include/c++/12/bits/stl_function.h:
-
-/usr/include/c++/12/pstl/pstl_config.h:
-
-/usr/include/c++/12/ext/numeric_traits.h:

@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/minic.dir/src/main.cpp.o CMakeFiles/minic.dir/src/lexer/lexer.cpp.o -o minic 
+/usr/bin/c++ CMakeFiles/minic.dir/src/main.cpp.o CMakeFiles/minic.dir/src/lexer/lexer.cpp.o CMakeFiles/minic.dir/src/parser/parser.cpp.o -o minic 

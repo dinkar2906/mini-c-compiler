@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dinkar/Desktop/mini-c-compiler/src/lexer/lexer.cpp" "CMakeFiles/minic.dir/src/lexer/lexer.cpp.o" "gcc" "CMakeFiles/minic.dir/src/lexer/lexer.cpp.o.d"
   "/home/dinkar/Desktop/mini-c-compiler/src/main.cpp" "CMakeFiles/minic.dir/src/main.cpp.o" "gcc" "CMakeFiles/minic.dir/src/main.cpp.o.d"
+  "/home/dinkar/Desktop/mini-c-compiler/src/parser/parser.cpp" "CMakeFiles/minic.dir/src/parser/parser.cpp.o" "gcc" "CMakeFiles/minic.dir/src/parser/parser.cpp.o.d"
   )
 
 # Targets to which this target links.

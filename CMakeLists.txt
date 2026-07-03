@@ -8,6 +8,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(include)
 
 add_executable(minic
+
     src/main.cpp
+
     src/lexer/lexer.cpp
+
+    src/parser/parser.cpp
 )
