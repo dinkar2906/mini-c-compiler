@@ -11,6 +11,8 @@ A compiler for a subset of the C language written in C++.
 - Intermediate Representation
 - x86-64 Code Generation
 
+- new features in future (different types of parsers implemented )
+
 ## Build
 
 make
