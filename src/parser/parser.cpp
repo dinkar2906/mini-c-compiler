@@ -27,7 +27,34 @@ void Parser::expect(TokenType type)
     }
 }
 
+void Parser::parseProgram()
+{
+    parseFunction();
+}
+
+void Parser::parseFunction()
+{
+    std::cout << "Parsing Function\n";
+
+    expect(TOK_INT);
+
+    expect(TOK_IDENTIFIER);
+
+    expect(TOK_LPAREN);
+
+    expect(TOK_RPAREN);
+
+    parseBlock();
+}
+
+void Parser::parseBlock()
+{
+    std::cout << "Parsing Block\n";
+}
+
 void Parser::parse()
 {
-    std::cout << "Parser Started\n";
+    parseProgram();
+
+    std::cout << "Program Parsed Successfully\n";
 }

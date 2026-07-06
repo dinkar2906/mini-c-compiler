@@ -13,6 +13,11 @@ private:
     void advance();
     void expect(TokenType type);
 
+    // Grammar
+    void parseProgram();
+    void parseFunction();
+    void parseBlock();
+
 public:
 
     Parser(const char* source);
