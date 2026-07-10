@@ -50,6 +50,17 @@ void Parser::parseFunction()
 void Parser::parseBlock()
 {
     std::cout << "Parsing Block\n";
+
+    expect(TOK_LBRACE);
+
+    parseStatementList();
+
+    expect(TOK_RBRACE);
+}
+
+void Parser::parseStatementList()
+{
+    std::cout << "Parsing Statement List\n";
 }
 
 void Parser::parse()
