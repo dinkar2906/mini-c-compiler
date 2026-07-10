@@ -17,7 +17,12 @@ private:
     void parseProgram();
     void parseFunction();
     void parseBlock();
+
+    //2
     void parseStatementList();
+    
+    // 3
+    void parseStatement();
 
 public:
 

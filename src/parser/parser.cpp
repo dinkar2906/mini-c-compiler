@@ -60,8 +60,23 @@ void Parser::parseBlock()
 
 void Parser::parseStatementList()
 {
-    std::cout << "Parsing Statement List\n";
+    while(currentToken.type != TOK_RBRACE &&
+          currentToken.type != TOK_EOF)
+    {
+        parseStatement();
+    }
 }
+
+void Parser::parseStatement()
+{
+    std::cout 
+        << "Statement found: "
+        << currentToken.lexeme
+        << '\n';
+
+    advance();
+}
+
 
 void Parser::parse()
 {

@@ -7,6 +7,7 @@ R"(
 
 int main()
 {
+    int x = 10;
 }
 
 )"
