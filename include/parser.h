@@ -24,6 +24,16 @@ private:
     // 3
     void parseStatement();
 
+    // 4
+
+    void parseDeclaration();
+
+    void parseAssignment();
+
+    void parseWhile();
+
+    void parseReturn();
+
 public:
 
     Parser(const char* source);

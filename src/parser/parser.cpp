@@ -69,14 +69,66 @@ void Parser::parseStatementList()
 
 void Parser::parseStatement()
 {
-    std::cout 
-        << "Statement found: "
-        << currentToken.lexeme
-        << '\n';
+    if(currentToken.type == TOK_INT)
+    {
+        parseDeclaration();
+    }
+
+    else if(currentToken.type == TOK_IDENTIFIER)
+    {
+        parseAssignment();
+    }
+
+    else if(currentToken.type == TOK_WHILE)
+    {
+        parseWhile();
+    }
+
+    else if(currentToken.type == TOK_RETURN)
+    {
+        parseReturn();
+    }
+
+    else
+    {
+        std::cout << "Unknown Statement\n";
+        exit(1);
+    }
+}
+
+
+// temp func
+
+void Parser::parseDeclaration()
+{
+    std::cout << "Declaration\n";
 
     advance();
 }
 
+
+void Parser::parseAssignment()
+{
+    std::cout << "Assignment\n";
+
+    advance();
+}
+
+
+void Parser::parseWhile()
+{
+    std::cout << "While\n";
+
+    advance();
+}
+
+
+void Parser::parseReturn()
+{
+    std::cout << "Return\n";
+
+    advance();
+}
 
 void Parser::parse()
 {
