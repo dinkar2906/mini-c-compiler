@@ -173,3 +173,57 @@ void Parser::parse()
 
     std::cout << "Program Parsed Successfully\n";
 }
+
+void Parser::parseAssignment()
+{
+    std::cout << "Parsing Assignment\n";
+
+    expect(TOK_IDENTIFIER);
+
+    expect(TOK_ASSIGN);
+
+    parseExpression();
+
+    expect(TOK_SEMICOLON);
+}
+
+void Parser::parseExpression()
+{
+    parseTerm();
+
+    while(currentToken.type == TOK_PLUS ||
+          currentToken.type == TOK_MINUS)
+    {
+        advance();
+
+        parseTerm();
+    }
+}
+
+void Parser::parseTerm()
+{
+    if(currentToken.type == TOK_NUMBER)
+    {
+        expect(TOK_NUMBER);
+    }
+    else if(currentToken.type == TOK_IDENTIFIER)
+    {
+        expect(TOK_IDENTIFIER);
+    }
+    else
+    {
+        std::cout << "Expression Expected\n";
+        exit(1);
+    }
+}
+
+// parseExpression()
+// {
+//     parseTerm();
+
+//     while(+ or -)
+//     {
+//         advance();
+//         parseTerm();
+//     }
+// }
