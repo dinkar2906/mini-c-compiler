@@ -34,6 +34,13 @@ private:
 
     void parseReturn();
 
+    // 5
+
+    void parseExpression();
+    
+    void parseTerm();
+
+
 public:
 
     Parser(const char* source);

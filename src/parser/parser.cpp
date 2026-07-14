@@ -130,6 +130,43 @@ void Parser::parseReturn()
     advance();
 }
 
+void Parser::parseDeclaration()
+{
+    std::cout << "Parsing Declaration\n";
+
+    expect(TOK_INT);
+
+    expect(TOK_IDENTIFIER);
+
+    expect(TOK_ASSIGN);
+
+    parseExpression();
+
+    expect(TOK_SEMICOLON);
+}
+
+void Parser::parseExpression()
+{
+    parseTerm();
+}
+
+void Parser::parseTerm()
+{
+    if(currentToken.type == TOK_NUMBER)
+    {
+        expect(TOK_NUMBER);
+    }
+    else if(currentToken.type == TOK_IDENTIFIER)
+    {
+        expect(TOK_IDENTIFIER);
+    }
+    else
+    {
+        std::cout << "Expected number or identifier\n";
+        exit(1);
+    }
+}
+
 void Parser::parse()
 {
     parseProgram();
