@@ -1,7 +1,7 @@
 #include "parser.h"
 
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 
 Parser::Parser(const char* source)
     : lexer(source)
@@ -27,6 +27,13 @@ void Parser::expect(TokenType type)
     }
 }
 
+void Parser::parse()
+{
+    parseProgram();
+
+    std::cout << "Program Parsed Successfully\n";
+}
+
 void Parser::parseProgram()
 {
     parseFunction();
@@ -37,11 +44,8 @@ void Parser::parseFunction()
     std::cout << "Parsing Function\n";
 
     expect(TOK_INT);
-
     expect(TOK_IDENTIFIER);
-
     expect(TOK_LPAREN);
-
     expect(TOK_RPAREN);
 
     parseBlock();
@@ -73,22 +77,18 @@ void Parser::parseStatement()
     {
         parseDeclaration();
     }
-
     else if(currentToken.type == TOK_IDENTIFIER)
     {
         parseAssignment();
     }
-
     else if(currentToken.type == TOK_WHILE)
     {
         parseWhile();
     }
-
     else if(currentToken.type == TOK_RETURN)
     {
         parseReturn();
     }
-
     else
     {
         std::cout << "Unknown Statement\n";
@@ -96,48 +96,12 @@ void Parser::parseStatement()
     }
 }
 
-
-// temp func
-
-void Parser::parseDeclaration()
-{
-    std::cout << "Declaration\n";
-
-    advance();
-}
-
-
-void Parser::parseAssignment()
-{
-    std::cout << "Assignment\n";
-
-    advance();
-}
-
-
-void Parser::parseWhile()
-{
-    std::cout << "While\n";
-
-    advance();
-}
-
-
-void Parser::parseReturn()
-{
-    std::cout << "Return\n";
-
-    advance();
-}
-
 void Parser::parseDeclaration()
 {
     std::cout << "Parsing Declaration\n";
 
     expect(TOK_INT);
-
     expect(TOK_IDENTIFIER);
-
     expect(TOK_ASSIGN);
 
     parseExpression();
@@ -145,41 +109,11 @@ void Parser::parseDeclaration()
     expect(TOK_SEMICOLON);
 }
 
-void Parser::parseExpression()
-{
-    parseTerm();
-}
-
-void Parser::parseTerm()
-{
-    if(currentToken.type == TOK_NUMBER)
-    {
-        expect(TOK_NUMBER);
-    }
-    else if(currentToken.type == TOK_IDENTIFIER)
-    {
-        expect(TOK_IDENTIFIER);
-    }
-    else
-    {
-        std::cout << "Expected number or identifier\n";
-        exit(1);
-    }
-}
-
-void Parser::parse()
-{
-    parseProgram();
-
-    std::cout << "Program Parsed Successfully\n";
-}
-
 void Parser::parseAssignment()
 {
     std::cout << "Parsing Assignment\n";
 
     expect(TOK_IDENTIFIER);
-
     expect(TOK_ASSIGN);
 
     parseExpression();
@@ -195,7 +129,6 @@ void Parser::parseExpression()
           currentToken.type == TOK_MINUS)
     {
         advance();
-
         parseTerm();
     }
 }
@@ -217,13 +150,16 @@ void Parser::parseTerm()
     }
 }
 
-// parseExpression()
-// {
-//     parseTerm();
+void Parser::parseWhile()
+{
+    std::cout << "Parsing While (Temporary)\n";
 
-//     while(+ or -)
-//     {
-//         advance();
-//         parseTerm();
-//     }
-// }
+    advance();
+}
+
+void Parser::parseReturn()
+{
+    std::cout << "Parsing Return (Temporary)\n";
+
+    advance();
+}

@@ -6,7 +6,6 @@
 class Lexer
 {
 private:
-    private:
     const char* source;
     int pos;
     int line;
@@ -16,8 +15,6 @@ private:
     void advance();
 
     TokenType checkKeyword(const char* word);
-
-    Token makeToken(TokenType type, const char* lexeme);
 
 public:
     Lexer(const char* src);

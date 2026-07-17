@@ -13,33 +13,20 @@ private:
     void advance();
     void expect(TokenType type);
 
-    // Grammar
+    // Grammar Rules
     void parseProgram();
     void parseFunction();
     void parseBlock();
-
-    //2
     void parseStatementList();
-    
-    // 3
     void parseStatement();
 
-    // 4
-
     void parseDeclaration();
-
     void parseAssignment();
-
     void parseWhile();
-
     void parseReturn();
 
-    // 5
-
     void parseExpression();
-    
     void parseTerm();
-
 
 public:
 
