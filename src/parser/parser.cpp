@@ -166,7 +166,11 @@ void Parser::parseWhile()
 
 void Parser::parseReturn()
 {
-    std::cout << "Parsing Return (Temporary)\n";
+    std::cout << "Parsing Return\n";
 
-    advance();
+    expect(TOK_RETURN);
+
+    parseExpression();
+
+    expect(TOK_SEMICOLON);
 }
