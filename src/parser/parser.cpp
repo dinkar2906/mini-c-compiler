@@ -152,9 +152,16 @@ void Parser::parseTerm()
 
 void Parser::parseWhile()
 {
-    std::cout << "Parsing While (Temporary)\n";
+    std::cout << "Parsing While\n";
 
-    advance();
+    expect(TOK_WHILE);
+    expect(TOK_LPAREN);
+
+    parseExpression();
+
+    expect(TOK_RPAREN);
+
+    parseBlock();
 }
 
 void Parser::parseReturn()
